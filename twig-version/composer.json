@@ -1,6 +1,6 @@
 {
-  "name": "sasha-michell/ticket-app-twig",
-  "description": "Ticket Management App - Twig Version",
+  "name": "ticket-app/twig-version",
+  "description": "Ticket Management - Twig Version",
   "require": {
     "php": "^8.0",
     "twig/twig": "^3.0",
