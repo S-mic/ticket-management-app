@@ -1,29 +1,21 @@
 <?php
-
 namespace App\Utils;
-
 class TicketStorage
 {
     private const TICKETS_KEY = 'ticketapp_tickets';
-
     public static function getTickets()
     {
-        if (!isset($_SESSION[self::TICKETS_KEY])) {
-            return [];
-        }
-
+        if (!isset($_SESSION[self::TICKETS_KEY])) return [];
         try {
             return json_decode($_SESSION[self::TICKETS_KEY], true) ?: [];
         } catch (\Exception $e) {
             return [];
         }
     }
-
     public static function saveTickets($tickets)
     {
         $_SESSION[self::TICKETS_KEY] = json_encode($tickets);
     }
-
     public static function createTicket($ticketData)
     {
         $tickets = self::getTickets();
@@ -36,12 +28,10 @@ class TicketStorage
             'status' => $ticketData['status'] ?? 'open',
             'priority' => $ticketData['priority'] ?? 'medium'
         ];
-        
         $tickets[] = $newTicket;
         self::saveTickets($tickets);
         return $newTicket;
     }
-
     public static function updateTicket($id, $updates)
     {
         $tickets = self::getTickets();
@@ -54,7 +44,6 @@ class TicketStorage
         }
         return null;
     }
-
     public static function deleteTicket($id)
     {
         $tickets = self::getTickets();
@@ -64,14 +53,11 @@ class TicketStorage
         self::saveTickets(array_values($filteredTickets));
         return true;
     }
-
     public static function getTicket($id)
     {
         $tickets = self::getTickets();
         foreach ($tickets as $ticket) {
-            if ($ticket['id'] === $id) {
-                return $ticket;
-            }
+            if ($ticket['id'] === $id) return $ticket;
         }
         return null;
     }

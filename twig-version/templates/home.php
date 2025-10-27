@@ -3,22 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Multi-Framework Ticket Management - Twig</title>   
- <link rel="stylesheet" href="/assets/css/style.css">
+    <title>Multi-Framework Ticket Management - Twig</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
-    <?php include 'partials/header.php'; ?>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo">Multi-Framework Tickets</a>
+                <nav class="navigation">
+                    <a href="/auth/login">Login</a>
+                    <a href="/auth/signup">Sign Up</a>
+                </nav>
+            </div>
+        </div>
+    </header>
     
-    <!-- Hero Section -->
     <section class="hero-section">
         <div class="container">
             <div class="decorative-circle circle-lg"></div>
             <div class="decorative-circle circle-md"></div>
             
             <div class="hero-content">
-                <h1 class="hero-title">Welcome to TicketFlow</h1>
+                <h1 class="hero-title">Multi-Framework Ticket Management</h1>
                 <p class="hero-description">
-                    Streamline your support tickets and manage customer requests efficiently with our powerful ticket management system.
+                    Experience the same application built with React, Vue.js, and Twig
                 </p>
                 <div class="hero-actions">
                     <a href="/auth/login" class="btn btn-primary">Login</a>
@@ -34,27 +43,33 @@
         </div>
     </section>
 
-    <!-- Features Section -->
     <section class="features-section">
         <div class="container">
             <h2>Powerful Features</h2>
             <div class="grid grid-3">
                 <div class="card text-center">
                     <h3>Easy Ticket Creation</h3>
-                    <p>Create and manage support tickets with ease using our intuitive interface.</p>
+                    <p>Create and manage support tickets with ease.</p>
                 </div>
                 <div class="card text-center">
                     <h3>Real-time Updates</h3>
-                    <p>Track ticket status in real-time and stay updated on progress.</p>
+                    <p>Track ticket status in real-time.</p>
                 </div>
                 <div class="card text-center">
                     <h3>Team Collaboration</h3>
-                    <p>Work together with your team to resolve tickets efficiently.</p>
+                    <p>Work together with your team efficiently.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <?php include 'partials/footer.php'; ?>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 Multi-Framework Tickets. All rights reserved.</p>
+                <p>Twig/PHP Version - Part of Multi-Framework Demo</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
