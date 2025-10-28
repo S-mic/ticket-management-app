@@ -2,9 +2,9 @@ Multi-Framework Ticket Management App
 A complete ticket management system built with React, Vue.js, and Twig/PHP - demonstrating identical functionality across three different frontend technologies.
 
 🚀 Live Demos
-React: https://react-version-fr566fz5j-sashas-projects-8206ecea.vercel.app
+React: https://react-version-6a4pcptq2-sashas-projects-8206ecea.vercel.app/
 
-Vue.js: https://multi-framework-tickets-vue.vercel.app
+Vue.js: https://vue-version-o8p8a7km0-sashas-projects-8206ecea.vercel.app/
 
 Twig: Local setup required (see below)
 
