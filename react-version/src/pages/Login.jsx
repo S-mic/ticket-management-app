@@ -76,33 +76,35 @@ const Login = () => {
         
         <form onSubmit={handleSubmit}>
           <div className="form-group">
-            <label className="form-label">Email</label>
+            <label className="form-label" htmlFor="login-email">Email</label>
             <input
               type="email"
+              id="login-email"
               name="email"
               value={formData.email}
               onChange={handleChange}
               className="form-input"
               placeholder="Enter your email"
             />
-            {errors.email && <div className="form-error">{errors.email}</div>}
+            {errors.email && <div className="form-error" role="alert">{errors.email}</div>}
           </div>
 
           <div className="form-group">
-            <label className="form-label">Password</label>
+            <label className="form-label" htmlFor="login-password">Password</label>
             <input
               type="password"
+              id="login-password"
               name="password"
               value={formData.password}
               onChange={handleChange}
               className="form-input"
               placeholder="Enter your password"
             />
-            {errors.password && <div className="form-error">{errors.password}</div>}
+            {errors.password && <div className="form-error" role="alert">{errors.password}</div>}
           </div>
 
           {errors.general && (
-            <div className="form-error" style={{ textAlign: 'center', marginBottom: '1rem' }}>
+            <div className="form-error" role="alert" style={{ textAlign: 'center', marginBottom: '1rem' }}>
               {errors.general}
             </div>
           )}
