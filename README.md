@@ -39,6 +39,31 @@ bash
 cd twig-version
 composer install
 php -S localhost:8000 -t public
+🧪 End-to-End Tests (React)
+The React version has a Playwright suite that drives the real production build in Chromium and a mobile viewport. It runs on every pull request via GitHub Actions.
+
+bash
+cd react-version
+npx playwright install chromium   # first time only
+npm run test:e2e                  # headless
+npm run test:e2e:ui               # interactive runner
+
+What it covers:
+
+Auth: protected routes redirect to login, demo login, wrong password, field validation, signup password mismatch, expired sessions
+
+Tickets: empty state, create (and persist across reload), title and status validation, edit, delete confirm and cancel
+
+Dashboard: counts by status, the "Create New Ticket" shortcut
+
+How the tests are written:
+
+Role and label queries first (getByRole, getByLabel), like a user or screen reader finds things. Test IDs only where there is no accessible name (status badge, stat cards)
+
+Tests seed localStorage directly (e2e/fixtures.js) instead of clicking through login, so each test is independent and fast. One test still covers the real login flow end to end
+
+To make label queries work, form labels are now linked to their inputs (htmlFor/id), and errors and toasts are announced to screen readers (role="alert", aria-live)
+
 🎯 Project Structure
 text
 ticket-management-app/
