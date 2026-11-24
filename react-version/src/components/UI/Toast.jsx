@@ -7,7 +7,7 @@ const ToastContainer = () => {
   if (toasts.length === 0) return null;
 
   return (
-    <div className="toast-container">
+    <div className="toast-container" role="status" aria-live="polite">
       {toasts.map((toast) => (
         <div
           key={toast.id}
@@ -20,8 +20,9 @@ const ToastContainer = () => {
             onClick={() => removeToast(toast.id)}
             className="btn btn-secondary"
             style={{ padding: '4px 8px', fontSize: '14px' }}
+            aria-label="Dismiss notification"
           >
-            ×
+            <span aria-hidden="true">×</span>
           </button>
         </div>
       ))}

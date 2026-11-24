@@ -53,21 +53,23 @@ const TicketForm = ({ ticket, onSubmit, onCancel }) => {
       </h2>
       
       <div className="form-group">
-        <label className="form-label">Title *</label>
+        <label className="form-label" htmlFor="ticket-title">Title *</label>
         <input
           type="text"
+          id="ticket-title"
           name="title"
           value={formData.title}
           onChange={handleChange}
           className="form-input"
           placeholder="Enter ticket title"
         />
-        {errors.title && <div className="form-error">{errors.title}</div>}
+        {errors.title && <div className="form-error" role="alert">{errors.title}</div>}
       </div>
 
       <div className="form-group">
-        <label className="form-label">Description</label>
+        <label className="form-label" htmlFor="ticket-description">Description</label>
         <textarea
+          id="ticket-description"
           name="description"
           value={formData.description}
           onChange={handleChange}
@@ -75,12 +77,13 @@ const TicketForm = ({ ticket, onSubmit, onCancel }) => {
           rows="4"
           placeholder="Enter ticket description"
         />
-        {errors.description && <div className="form-error">{errors.description}</div>}
+        {errors.description && <div className="form-error" role="alert">{errors.description}</div>}
       </div>
 
       <div className="form-group">
-        <label className="form-label">Status *</label>
+        <label className="form-label" htmlFor="ticket-status">Status *</label>
         <select
+          id="ticket-status"
           name="status"
           value={formData.status}
           onChange={handleChange}
@@ -93,12 +96,13 @@ const TicketForm = ({ ticket, onSubmit, onCancel }) => {
             </option>
           ))}
         </select>
-        {errors.status && <div className="form-error">{errors.status}</div>}
+        {errors.status && <div className="form-error" role="alert">{errors.status}</div>}
       </div>
 
       <div className="form-group">
-        <label className="form-label">Priority</label>
+        <label className="form-label" htmlFor="ticket-priority">Priority</label>
         <select
+          id="ticket-priority"
           name="priority"
           value={formData.priority}
           onChange={handleChange}

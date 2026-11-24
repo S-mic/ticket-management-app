@@ -86,59 +86,63 @@ const Signup = () => {
         
         <form onSubmit={handleSubmit}>
           <div className="form-group">
-            <label className="form-label">Full Name</label>
+            <label className="form-label" htmlFor="signup-name">Full Name</label>
             <input
               type="text"
+              id="signup-name"
               name="name"
               value={formData.name}
               onChange={handleChange}
               className="form-input"
               placeholder="Enter your full name"
             />
-            {errors.name && <div className="form-error">{errors.name}</div>}
+            {errors.name && <div className="form-error" role="alert">{errors.name}</div>}
           </div>
 
           <div className="form-group">
-            <label className="form-label">Email</label>
+            <label className="form-label" htmlFor="signup-email">Email</label>
             <input
               type="email"
+              id="signup-email"
               name="email"
               value={formData.email}
               onChange={handleChange}
               className="form-input"
               placeholder="Enter your email"
             />
-            {errors.email && <div className="form-error">{errors.email}</div>}
+            {errors.email && <div className="form-error" role="alert">{errors.email}</div>}
           </div>
 
           <div className="form-group">
-            <label className="form-label">Password</label>
+            <label className="form-label" htmlFor="signup-password">Password</label>
             <input
               type="password"
+              id="signup-password"
               name="password"
               value={formData.password}
               onChange={handleChange}
               className="form-input"
               placeholder="Enter your password"
             />
-            {errors.password && <div className="form-error">{errors.password}</div>}
+            {errors.password && <div className="form-error" role="alert">{errors.password}</div>}
           </div>
 
           <div className="form-group">
-            <label className="form-label">Confirm Password</label>
+            <label className="form-label" htmlFor="signup-confirmPassword">Confirm Password</label>
             <input
               type="password"
+              id="signup-confirmPassword"
               name="confirmPassword"
               value={formData.confirmPassword}
               onChange={handleChange}
               className="form-input"
               placeholder="Confirm your password"
             />
-            {errors.confirmPassword && <div className="form-error">{errors.confirmPassword}</div>}
+            {errors.confirmPassword && <div className="form-error" role="alert">{errors.confirmPassword}</div>}
           </div>
 
           {errors.general && (
-            <div className="form-error" style={{ textAlign: 'center', marginBottom: '1rem' }}>
+            <div className="form-error" role="alert" style={{ textAlign: 'center', marginBottom: '1rem' }}>
               {errors.general}
             </div>
           )}

@@ -24,7 +24,7 @@ const Dashboard = () => {
   }, []);
 
   const StatCard = ({ title, value, color }) => (
-    <div className="card text-center">
+    <div className="card text-center" data-testid={`stat-${title.toLowerCase().replace(/\s+/g, '-')}`}>
       <h3 style={{ color, fontSize: '2rem', margin: '0 0 0.5rem 0' }}>{value}</h3>
       <p style={{ color: '#6b7280', margin: 0 }}>{title}</p>
     </div>

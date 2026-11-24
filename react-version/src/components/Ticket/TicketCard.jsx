@@ -19,10 +19,10 @@ const TicketCard = ({ ticket, onEdit, onDelete }) => {
   };
 
   return (
-    <div className="card">
+    <article className="card" data-testid="ticket-card" aria-label={ticket.title}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1rem' }}>
         <h3 style={{ margin: 0, flex: 1 }}>{ticket.title}</h3>
-        <span className={`status-badge ${getStatusClass(ticket.status)}`}>
+        <span className={`status-badge ${getStatusClass(ticket.status)}`} data-testid="ticket-status">
           {ticket.status.replace('_', ' ')}
         </span>
       </div>
@@ -56,7 +56,7 @@ const TicketCard = ({ ticket, onEdit, onDelete }) => {
           </button>
         </div>
       </div>
-    </div>
+    </article>
   );
 };
 
