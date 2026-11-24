@@ -11,5 +11,7 @@ export default defineConfig({
     outDir: 'dist',
     sourcemap: true
   },
-  base: './'  // Add this line
+  // Absolute asset paths: with './', a page like /auth/login asks for
+  // /auth/assets/index.js, which does not exist, and renders blank.
+  base: '/'
 })
